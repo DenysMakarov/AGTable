@@ -64,10 +64,7 @@ const OperatorTable: React.FC = () => {
       field: 'consentStatus',
       filter: true,
       sortable: true,
-      cellRenderer: (params: any) => {
-        const statusClass = `status-cell status-${params.value?.toLowerCase().replace(/\s+/g, '-')}`;
-        return <div className={statusClass}>{params.value || ''}</div>;
-      }
+      cellClass: (params) => ['status-cell', `status-${params.value.toLowerCase().replace(/\s+/g, '-')}`],
     },
     {
       headerName: 'Markets',
@@ -82,19 +79,16 @@ const OperatorTable: React.FC = () => {
       },
     },
     {
-      headerName: 'Contact',
-      children: [
-        { 
-          headerName: 'Email', 
-          field: 'contactEmail', 
-          filter: true,
-        },
-        { 
-          headerName: 'Phone', 
-          field: 'contactPhone', 
-          filter: true,
-        },
-      ],
+      headerName: 'Email',
+      field: 'contactEmail',
+      filter: true,
+      sortable: true,
+    },
+    {
+      headerName: 'Phone',
+      field: 'contactPhone',
+      filter: true,
+      sortable: true,
     },
     {
       headerName: 'Last Updated',

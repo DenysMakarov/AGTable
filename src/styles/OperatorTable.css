@@ -1,38 +1,129 @@
 .ag-theme-alpine {
-  --ag-header-height: 45px;
-  --ag-header-foreground-color: #666;
-  --ag-header-background-color: #fff;
+  --ag-header-height: 48px;
+  --ag-header-foreground-color: #374151;
+  --ag-header-background-color: #F9FAFB;
+  --ag-borders: none;
+  --ag-borders-critical: none;
+  --ag-row-border-color: transparent;
+  --ag-header-column-separator-display: block;
+  --ag-header-column-separator-height: 100%;
+  --ag-header-column-separator-width: 1px;
   --ag-header-cell-hover-background-color: #f8f9fa;
   --ag-header-cell-moving-background-color: #f8f9fa;
   --ag-row-hover-color: #f8f9fa;
   --ag-selected-row-background-color: rgba(0, 0, 0, 0.03);
-  --ag-font-size: 13px;
+  --ag-font-size: 14px;
   --ag-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --ag-grid-size: 5px;
-  --ag-row-height: 48px;
+  --ag-row-height: 56px;
   --ag-cell-horizontal-padding: 16px;
   --ag-range-selection-border-color: transparent;
   --ag-range-selection-background-color: rgba(0, 0, 0, 0.03);
+  --ag-header-column-resize-handle-color: rgba(186, 186, 186, 0.5);
+  --ag-header-column-resize-handle-width: 4px;
+  --ag-header-column-resize-handle-height: 50%;
   border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .ag-theme-alpine .ag-root-wrapper {
   border: none;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .ag-theme-alpine .ag-header {
+  border: 1px solid #E5E7EB;
+  background: #F9FAFB;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* padding: 4px; */
+}
+
+.ag-theme-alpine .ag-header-row {
+  background: transparent;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .ag-theme-alpine .ag-header-cell {
   padding: 8px 16px;
   font-weight: 600;
+  color: #374151;
+  font-size: 13px;
+  border: none !important;
+  background: transparent;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.ag-theme-alpine .ag-header-cell-resize {
+  position: absolute;
+  right: 0;
+  cursor: col-resize;
+  width: 8px;
+  height: 100%;
+  opacity: 0;
+}
+
+.ag-theme-alpine .ag-header-cell::after {
+  display: none !important;
+}
+
+.ag-theme-alpine .ag-header-cell-label {
+  color: #374151;
+  font-weight: 600;
+}
+
+.ag-theme-alpine .ag-header-cell:hover .ag-header-cell-resize {
+  opacity: 1;
+}
+
+/* Кастомные классы для хедера */
+.custom-header {
+  background: #F9FAFB;
+}
+
+.custom-header-cell {
+  color: #374151;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.custom-header-label {
+  color: #374151;
+  font-weight: 600;
+}
+
+.custom-header-hover:hover {
+  background-color: #F3F4F6;
+}
+
+.ag-theme-alpine .ag-header-group-cell {
+  font-weight: 600;
+  padding: 12px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.ag-theme-alpine .ag-header-cell:hover,
+.ag-theme-alpine .ag-header-group-cell:hover {
+  background-color: #f5f5f5;
+}
+
+.ag-theme-alpine .ag-header-cell-menu-button {
+  opacity: 0.7;
+}
+
+.ag-theme-alpine .ag-header-cell-menu-button:hover {
+  opacity: 1;
 }
 
 .ag-theme-alpine .ag-cell {
-  padding: 8px 16px;
-  line-height: 32px;
+  padding: 8px 12px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
   border-right: none !important;
 }
 
@@ -50,7 +141,6 @@
   display: flex;
   gap: 12px;
   align-items: center;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 .search-input,
@@ -73,17 +163,19 @@
 
 /* Стили для статусов */
 .status-cell {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
 .status-cell::before {
   content: "";
   display: inline-block;
+  min-width: 8px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  margin-right: 4px;
 }
 
 .status-active::before {
@@ -95,11 +187,11 @@
 }
 
 .status-on-hold::before {
-  background-color: #ff9800;
+  background-color: #ffc107;
 }
 
 .status-blocked::before {
-  background-color: #d81717;
+  background-color: #f00303;
 }
 
 /* Стили для фильтров в заголовках */
@@ -164,3 +256,6 @@
 .ag-theme-alpine .ag-header-cell:nth-child(3) {
   padding: 8px 16px;
 } 
+.ag-header-cell::before{
+  display: none;
+}
