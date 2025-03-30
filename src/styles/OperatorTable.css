@@ -98,6 +98,10 @@
   background-color: #ff9800;
 }
 
+.status-blocked::before {
+  background-color: #d81717;
+}
+
 /* Стили для фильтров в заголовках */
 .ag-theme-alpine .ag-floating-filter-body input {
   height: 28px;
@@ -137,15 +141,6 @@
 
 .ag-row-drag {
   cursor: move;
-}
-
-/* Удаляем старые стили */
-.status-blocked::before {
-  content: none;
-}
-
-.status-out-of-stock::before {
-  content: none;
 }
 
 /* Стили только для колонки с чекбоксами */

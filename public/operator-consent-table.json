@@ -71,7 +71,7 @@
       "FR",
       "NZ"
     ],
-    "latestConsentStatus": "Active",
+    "latestConsentStatus": "Blocked",
     "lastConsentUpdate": "Thu, 28 Nov 2024 18:48:03 UTC"
   },
   {
@@ -90,7 +90,7 @@
       "SG",
       "MY"
     ],
-    "latestConsentStatus": "Active",
+    "latestConsentStatus": "On Hold",
     "lastConsentUpdate": "Thu, 16 Jan 2025 18:48:03 UTC"
   },
   {
@@ -126,7 +126,7 @@
       "BR",
       "AR"
     ],
-    "latestConsentStatus": "Active",
+    "latestConsentStatus": "Blocked",
     "lastConsentUpdate": "Sat, 09 Nov 2024 18:48:03 UTC"
   },
   {
@@ -144,7 +144,7 @@
       "US",
       "CA"
     ],
-    "latestConsentStatus": "Active",
+    "latestConsentStatus": "Blocked",
     "lastConsentUpdate": "Fri, 21 Jun 2024 18:48:03 UTC"
   },
   {
@@ -198,7 +198,7 @@
       "US",
       "CA"
     ],
-    "latestConsentStatus": "Active",
+    "latestConsentStatus": "On Hold",
     "lastConsentUpdate": "Fri, 17 Jan 2025 18:48:03 UTC"
   },
   {
