@@ -1,0 +1,386 @@
+[
+  {
+    "tenantGuid": "988636-0-abc-def",
+    "operatorName": "Wingtip",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Wingtip User0",
+      "email": "user0@wingtip.com",
+      "phone": "+1-202-555-1000"
+    },
+    "companyName": "AdventureWorks Ltd",
+    "companySize": "3000+ people",
+    "markets": [
+      "AU",
+      "SG",
+      "MY"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Tue, 13 Aug 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "481781-1-abc-def",
+    "operatorName": "Contoso",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Contoso User1",
+      "email": "user1@contoso.com",
+      "phone": "+1-202-555-1001"
+    },
+    "companyName": "Contoso Corp",
+    "companySize": "500+ people",
+    "markets": [
+      "BR",
+      "AR"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Tue, 25 Jun 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "451069-2-abc-def",
+    "operatorName": "Contoso",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Contoso User2",
+      "email": "user2@contoso.com",
+      "phone": "+1-202-555-1002"
+    },
+    "companyName": "Wingtip Toys",
+    "companySize": "1-10 people",
+    "markets": [
+      "BR",
+      "AR"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Sat, 07 Sep 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "334842-3-abc-def",
+    "operatorName": "Wingtip",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Wingtip User3",
+      "email": "user3@wingtip.com",
+      "phone": "+1-202-555-1003"
+    },
+    "companyName": "Fabrikam Inc",
+    "companySize": "500+ people",
+    "markets": [
+      "IN",
+      "GB",
+      "FR",
+      "NZ"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Thu, 28 Nov 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "717680-4-abc-def",
+    "operatorName": "Fabrikam",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Fabrikam User4",
+      "email": "user4@fabrikam.com",
+      "phone": "+1-202-555-1004"
+    },
+    "companyName": "Northwind Traders",
+    "companySize": "3000+ people",
+    "markets": [
+      "AU",
+      "SG",
+      "MY"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Thu, 16 Jan 2025 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "729707-5-abc-def",
+    "operatorName": "Fabrikam",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Fabrikam User5",
+      "email": "user5@fabrikam.com",
+      "phone": "+1-202-555-1005"
+    },
+    "companyName": "Northwind Traders",
+    "companySize": "11-50 people",
+    "markets": [
+      "US",
+      "CA"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Wed, 26 Feb 2025 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "215557-6-abc-def",
+    "operatorName": "Northwind",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Northwind User6",
+      "email": "user6@northwind.com",
+      "phone": "+1-202-555-1006"
+    },
+    "companyName": "Northwind Traders",
+    "companySize": "3000+ people",
+    "markets": [
+      "BR",
+      "AR"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Sat, 09 Nov 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "242840-7-abc-def",
+    "operatorName": "Contoso",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Contoso User7",
+      "email": "user7@contoso.com",
+      "phone": "+1-202-555-1007"
+    },
+    "companyName": "Northwind Traders",
+    "companySize": "500+ people",
+    "markets": [
+      "US",
+      "CA"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Fri, 21 Jun 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "356510-8-abc-def",
+    "operatorName": "Fabrikam",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Fabrikam User8",
+      "email": "user8@fabrikam.com",
+      "phone": "+1-202-555-1008"
+    },
+    "companyName": "Northwind Traders",
+    "companySize": "201-500 people",
+    "markets": [
+      "BR",
+      "AR"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Fri, 13 Dec 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "131030-9-abc-def",
+    "operatorName": "Northwind",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Northwind User9",
+      "email": "user9@northwind.com",
+      "phone": "+1-202-555-1009"
+    },
+    "companyName": "Fabrikam Inc",
+    "companySize": "201-500 people",
+    "markets": [
+      "BR",
+      "AR"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Fri, 07 Jun 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "741213-10-abc-def",
+    "operatorName": "AdventureWorks",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "AdventureWorks User10",
+      "email": "user10@adventureworks.com",
+      "phone": "+1-202-555-1010"
+    },
+    "companyName": "Wingtip Toys",
+    "companySize": "51-200 people",
+    "markets": [
+      "US",
+      "CA"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Fri, 17 Jan 2025 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "538344-11-abc-def",
+    "operatorName": "Wingtip",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Wingtip User11",
+      "email": "user11@wingtip.com",
+      "phone": "+1-202-555-1011"
+    },
+    "companyName": "Wingtip Toys",
+    "companySize": "1-10 people",
+    "markets": [
+      "AU",
+      "SG",
+      "MY"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Mon, 02 Dec 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "496541-12-abc-def",
+    "operatorName": "Contoso",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Contoso User12",
+      "email": "user12@contoso.com",
+      "phone": "+1-202-555-1012"
+    },
+    "companyName": "Fabrikam Inc",
+    "companySize": "500+ people",
+    "markets": [
+      "US",
+      "CA"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Sat, 04 Jan 2025 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "938669-13-abc-def",
+    "operatorName": "Wingtip",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Wingtip User13",
+      "email": "user13@wingtip.com",
+      "phone": "+1-202-555-1013"
+    },
+    "companyName": "Fabrikam Inc",
+    "companySize": "1-10 people",
+    "markets": [
+      "US",
+      "CA"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Wed, 31 Jul 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "116448-14-abc-def",
+    "operatorName": "Fabrikam",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Fabrikam User14",
+      "email": "user14@fabrikam.com",
+      "phone": "+1-202-555-1014"
+    },
+    "companyName": "Fabrikam Inc",
+    "companySize": "500+ people",
+    "markets": [
+      "BR",
+      "AR"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Thu, 19 Sep 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "409006-15-abc-def",
+    "operatorName": "Wingtip",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Wingtip User15",
+      "email": "user15@wingtip.com",
+      "phone": "+1-202-555-1015"
+    },
+    "companyName": "Wingtip Toys",
+    "companySize": "11-50 people",
+    "markets": [
+      "DE",
+      "JP"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Fri, 13 Sep 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "366178-16-abc-def",
+    "operatorName": "Wingtip",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Wingtip User16",
+      "email": "user16@wingtip.com",
+      "phone": "+1-202-555-1016"
+    },
+    "companyName": "Wingtip Toys",
+    "companySize": "201-500 people",
+    "markets": [
+      "US",
+      "CA"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Sat, 15 Jun 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "191562-17-abc-def",
+    "operatorName": "AdventureWorks",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "AdventureWorks User17",
+      "email": "user17@adventureworks.com",
+      "phone": "+1-202-555-1017"
+    },
+    "companyName": "Fabrikam Inc",
+    "companySize": "500+ people",
+    "markets": [
+      "DE",
+      "JP"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Sun, 11 Aug 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "669243-18-abc-def",
+    "operatorName": "Wingtip",
+    "productContext": "cms",
+    "contactInformation": {
+      "name": "Wingtip User18",
+      "email": "user18@wingtip.com",
+      "phone": "+1-202-555-1018"
+    },
+    "companyName": "Northwind Traders",
+    "companySize": "201-500 people",
+    "markets": [
+      "AU",
+      "SG",
+      "MY"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Wed, 18 Sep 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "295683-19-abc-def",
+    "operatorName": "Northwind",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Northwind User19",
+      "email": "user19@northwind.com",
+      "phone": "+1-202-555-1019"
+    },
+    "companyName": "Wingtip Toys",
+    "companySize": "3000+ people",
+    "markets": [
+      "DE",
+      "JP"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Thu, 10 Oct 2024 18:48:03 UTC"
+  },
+  {
+    "tenantGuid": "636288-20-abc-def",
+    "operatorName": "Fabrikam",
+    "productContext": "teams",
+    "contactInformation": {
+      "name": "Fabrikam User20",
+      "email": "user20@fabrikam.com",
+      "phone": "+1-202-555-1020"
+    },
+    "companyName": "Wingtip Toys",
+    "companySize": "500+ people",
+    "markets": [
+      "DE",
+      "JP"
+    ],
+    "latestConsentStatus": "Active",
+    "lastConsentUpdate": "Sun, 08 Dec 2024 18:48:03 UTC"
+  }
+]
