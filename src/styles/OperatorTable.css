@@ -146,4 +146,26 @@
 
 .status-out-of-stock::before {
   content: none;
+}
+
+/* Стили только для колонки с чекбоксами */
+.ag-theme-alpine .ag-cell.ag-cell-first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 50px;
+}
+
+.ag-theme-alpine .ag-header-cell.ag-header-cell-first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 50px;
+}
+
+.ag-theme-alpine .ag-header-cell:nth-child(2),
+.ag-theme-alpine .ag-header-cell:nth-child(3) {
+  padding: 8px 16px;
 } 
