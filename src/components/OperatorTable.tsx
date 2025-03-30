@@ -1,9 +1,10 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { ColDef, GridReadyEvent, GridApi } from 'ag-grid-community';
 import '../styles/OperatorTable.css';
+import Switcher from './Switcher';
 
 interface OperatorData {
   operatorName: string;
@@ -22,6 +23,27 @@ const OperatorTable: React.FC = () => {
   const [rowData, setRowData] = useState<OperatorData[]>([]);
   const [quickFilterText, setQuickFilterText] = useState('');
   const [statusFilter, setStatusFilter] = useState('All');
+  const [switcherRect, setSwitcherRect] = useState({ left: 0, width: 0 });
+  const switcherRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const statusOptions = [
+    { value: 'All', label: 'All' },
+    { value: 'Active', label: 'Active' },
+    { value: 'On Hold', label: 'On Hold' },
+    { value: 'Blocked', label: 'Blocked' }
+  ];
+
+  useEffect(() => {
+    const activeButton = switcherRefs.current.find(
+      (ref) => ref?.classList.contains('active')
+    );
+    if (activeButton) {
+      setSwitcherRect({
+        left: activeButton.offsetLeft,
+        width: activeButton.offsetWidth,
+      });
+    }
+  }, [statusFilter]);
 
   const onGridReady = (params: GridReadyEvent) => {
     setGridApi(params.api);
@@ -156,10 +178,9 @@ const OperatorTable: React.FC = () => {
     }
   }, [gridApi]);
 
-  const onStatusFilterChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
-    setStatusFilter(e.target.value);
+  const onStatusFilterChange = useCallback((status: string) => {
+    setStatusFilter(status);
     if (gridApi) {
-      const status = e.target.value;
       gridApi.setFilterModel({
         consentStatus: status === 'All' ? null : {
           type: 'equals',
@@ -178,14 +199,13 @@ const OperatorTable: React.FC = () => {
           onChange={onFilterTextBoxChanged}
           className="search-input"
         />
-        <select onChange={onStatusFilterChange} value={statusFilter} className="status-select">
-          <option value="All">All</option>
-          <option value="Active">Active</option>
-          <option value="On Hold">On Hold</option>
-          <option value="Decline">Decline</option>
-        </select>
       </div>
-      <div className="ag-theme-alpine" style={{ height: 'calc(100vh - 120px)', width: '100%' }}>
+      <Switcher 
+        options={statusOptions}
+        value={statusFilter}
+        onChange={onStatusFilterChange}
+      />
+      <div className="ag-theme-alpine" style={{ height: 'calc(100vh - 160px)', width: '100%' }}>
         <AgGridReact
           onGridReady={onGridReady}
           rowData={rowData}

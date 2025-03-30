@@ -1,0 +1,46 @@
+.switcher {
+    display: flex;
+    padding: 4px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    gap: 4px;
+    width: fit-content;
+    position: relative;
+    margin-bottom: 10px;
+    border: 1px solid #E5E7EB;
+}
+
+.switcher-item {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B7280;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+
+.switcher-item:hover {
+    color: #111827;
+}
+
+.switcher-item.active {
+    color: #111827;
+}
+
+.switcher-background {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #E5E7EB;
+    z-index: 0;
+}
