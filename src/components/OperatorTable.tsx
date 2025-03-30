@@ -165,8 +165,9 @@ const OperatorTable: React.FC = () => {
     minWidth: 150,
     resizable: true,
     sortable: true,
-    floatingFilter: true,
     filter: true,
+    floatingFilter: true,
+    suppressMenu: false,
     icons: {
       filter: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-filter-icon lucide-list-filter"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>'
     }
@@ -210,7 +211,18 @@ const OperatorTable: React.FC = () => {
   const onFilterTextBoxChanged = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuickFilterText(value);
-  }, []);
+    if (gridApi) {
+      gridApi.setFilterModel({
+        operatorName: { type: 'contains', filter: value },
+        companyName: { type: 'contains', filter: value },
+        companySize: { type: 'contains', filter: value },
+        markets: { type: 'contains', filter: value },
+        contactEmail: { type: 'contains', filter: value },
+        contactPhone: { type: 'contains', filter: value }
+      });
+      gridApi.onFilterChanged();
+    }
+  }, [gridApi]);
 
   const onStatusFilterChange = useCallback((status: string) => {
     setStatusFilter(status);
@@ -236,6 +248,7 @@ const OperatorTable: React.FC = () => {
           placeholder="Search..."
           onChange={onFilterTextBoxChanged}
           className="search-input"
+          value={quickFilterText}
         />
       </div>
       <Switcher 
@@ -257,9 +270,8 @@ const OperatorTable: React.FC = () => {
           suppressMoveWhenRowDragging={false}
           enableCellTextSelection={true}
           ensureDomOrder={true}
-          quickFilterText={quickFilterText}
-          getRowId={(params: any) => params.data.operatorName}
-          rowBuffer={100}
+          domLayout="normal"
+          suppressHorizontalScroll={false}
         />
       </div>
     </div>
