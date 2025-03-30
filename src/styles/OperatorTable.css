@@ -113,10 +113,25 @@
 
 .ag-theme-alpine .ag-header-cell-menu-button {
   opacity: 0.7;
+  color: #6B7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ag-theme-alpine .ag-header-cell-menu-button:hover {
   opacity: 1;
+  color: #111827;
+}
+
+.ag-theme-alpine .ag-header-cell-menu-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Скрываем стандартную иконку меню */
+.ag-theme-alpine .ag-icon-menu {
+  display: none !important;
 }
 
 .ag-theme-alpine .ag-cell {
@@ -289,4 +304,17 @@
   background: #F3F4F6;
   color: #111827;
   font-weight: 600;
+}
+
+.ag-icon-filter {
+  color: #6B7280;
+  width: 14px !important;
+  height: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ag-icon-filter:hover {
+  color: #111827;
 }
