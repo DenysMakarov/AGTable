@@ -144,6 +144,7 @@
 
 .ag-theme-alpine .ag-row {
   border-bottom: 1px solid #f0f0f0;
+  transition: transform 0.3s, top 0.3s;
 }
 
 .ag-theme-alpine .ag-row-hover {
@@ -317,4 +318,17 @@
 
 .ag-icon-filter:hover {
   color: #111827;
+}
+
+.header-icon {
+  margin-right: 8px;
+  color: #6B7280;
+}
+
+.ag-header-cell:hover .header-icon {
+  color: #111827;
+}
+
+.ag-row-animation {
+  transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
 }

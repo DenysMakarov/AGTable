@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { ListFilter } from 'lucide-react';
+import { ListFilter, AtSign, Phone, Globe, Ruler, Clock } from 'lucide-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { ColDef, GridReadyEvent, GridApi } from 'ag-grid-community';
@@ -81,6 +81,15 @@ const OperatorTable: React.FC = () => {
       field: 'companySize',
       filter: true,
       sortable: true,
+      headerComponentParams: {
+        template: 
+          `<div class="ag-cell-label-container" role="presentation">
+             <div class="ag-header-cell-label" role="presentation">
+               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><path d="M21 6H3"/><path d="M7 12H3"/><path d="M3 18h4"/><path d="M21 18h-4"/><path d="M11 12h4"/><path d="M21 12h-2"/></svg>
+               <span ref="eText" class="ag-header-cell-text">Company Size</span>
+             </div>
+           </div>`
+      }
     },
     {
       headerName: 'Status',
@@ -94,30 +103,60 @@ const OperatorTable: React.FC = () => {
       field: 'markets',
       filter: true,
       sortable: true,
-      valueFormatter: (params) => {
-        if (Array.isArray(params.value)) {
-          return params.value.join(', ');
-        }
-        return params.value || '';
-      },
+      headerComponentParams: {
+        template: 
+          `<div class="ag-cell-label-container" role="presentation">
+             <div class="ag-header-cell-label" role="presentation">
+               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+               <span ref="eText" class="ag-header-cell-text">Markets</span>
+             </div>
+           </div>`
+      }
     },
     {
       headerName: 'Email',
       field: 'contactEmail',
       filter: true,
       sortable: true,
+      headerComponentParams: {
+        template: 
+          `<div class="ag-cell-label-container" role="presentation">
+             <div class="ag-header-cell-label" role="presentation">
+               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg>
+               <span ref="eText" class="ag-header-cell-text">Email</span>
+             </div>
+           </div>`
+      }
     },
     {
       headerName: 'Phone',
       field: 'contactPhone',
       filter: true,
       sortable: true,
+      headerComponentParams: {
+        template: 
+          `<div class="ag-cell-label-container" role="presentation">
+             <div class="ag-header-cell-label" role="presentation">
+               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+               <span ref="eText" class="ag-header-cell-text">Phone</span>
+             </div>
+           </div>`
+      }
     },
     {
       headerName: 'Last Updated',
       field: 'lastUpdated',
       filter: true,
       sortable: true,
+      headerComponentParams: {
+        template: 
+          `<div class="ag-cell-label-container" role="presentation">
+             <div class="ag-header-cell-label" role="presentation">
+               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+               <span ref="eText" class="ag-header-cell-text">Last Updated</span>
+             </div>
+           </div>`
+      }
     },
   ], []);
 
@@ -129,7 +168,6 @@ const OperatorTable: React.FC = () => {
     floatingFilter: true,
     filter: true,
     icons: {
-    //   filter: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ag-icon-filter"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>'
       filter: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-filter-icon lucide-list-filter"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>'
     }
   }), []);
@@ -170,29 +208,23 @@ const OperatorTable: React.FC = () => {
   }, []);
 
   const onFilterTextBoxChanged = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuickFilterText(e.target.value);
-    if (gridApi) {
-      gridApi.setFilterModel({
-        operatorName: { type: 'contains', filter: e.target.value },
-        companyName: { type: 'contains', filter: e.target.value },
-        companySize: { type: 'contains', filter: e.target.value },
-        markets: { type: 'contains', filter: e.target.value },
-        contactName: { type: 'contains', filter: e.target.value },
-        contactEmail: { type: 'contains', filter: e.target.value },
-        contactPhone: { type: 'contains', filter: e.target.value }
-      });
-    }
-  }, [gridApi]);
+    const value = e.target.value;
+    setQuickFilterText(value);
+  }, []);
 
   const onStatusFilterChange = useCallback((status: string) => {
     setStatusFilter(status);
     if (gridApi) {
-      gridApi.setFilterModel({
-        consentStatus: status === 'All' ? null : {
-          type: 'equals',
-          filter: status
-        }
-      });
+      if (status === 'All') {
+        gridApi.setFilterModel(null);
+      } else {
+        gridApi.setFilterModel({
+          consentStatus: {
+            type: 'equals',
+            filter: status
+          }
+        });
+      }
     }
   }, [gridApi]);
 
@@ -223,6 +255,11 @@ const OperatorTable: React.FC = () => {
           animateRows={true}
           rowDragManaged={true}
           suppressMoveWhenRowDragging={false}
+          enableCellTextSelection={true}
+          ensureDomOrder={true}
+          quickFilterText={quickFilterText}
+          getRowId={(params: any) => params.data.operatorName}
+          rowBuffer={100}
         />
       </div>
     </div>
