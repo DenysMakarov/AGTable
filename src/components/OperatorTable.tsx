@@ -168,6 +168,7 @@ const OperatorTable: React.FC = () => {
     filter: true,
     floatingFilter: true,
     suppressMenu: false,
+    cellStyle: { textAlign: 'left' },
     icons: {
       filter: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-filter-icon lucide-list-filter"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>'
     }
@@ -264,7 +265,6 @@ const OperatorTable: React.FC = () => {
           defaultColDef={defaultColDef}
           suppressRowClickSelection={true}
           rowSelection="multiple"
-          enableRangeSelection={true}
           animateRows={true}
           enableCellTextSelection={true}
           ensureDomOrder={true}

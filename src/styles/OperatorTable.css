@@ -140,6 +140,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border-right: none !important;
 }
 
 .ag-theme-alpine .ag-row {
