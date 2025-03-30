@@ -2,8 +2,8 @@
   --ag-header-height: 48px;
   --ag-header-foreground-color: #374151;
   --ag-header-background-color: #F9FAFB;
-  --ag-borders: none;
-  --ag-borders-critical: none;
+  --ag-borders: solid 1px;
+  --ag-border-color: #E5E7EB;
   --ag-row-border-color: transparent;
   --ag-header-column-separator-display: block;
   --ag-header-column-separator-height: 100%;
@@ -19,8 +19,9 @@
   --ag-cell-horizontal-padding: 16px;
   --ag-range-selection-border-color: transparent;
   --ag-range-selection-background-color: rgba(0, 0, 0, 0.03);
-  --ag-header-column-resize-handle-color: rgba(186, 186, 186, 0.5);
-  --ag-header-column-resize-handle-width: 4px;
+  --ag-header-column-resize-handle-display: block;
+  --ag-header-column-resize-handle-color: #d1d5db;
+  --ag-header-column-resize-handle-width: 1px;
   --ag-header-column-resize-handle-height: 50%;
   border: none;
 }
@@ -55,15 +56,17 @@
   height: 48px;
   display: flex;
   align-items: center;
+  border-right: none !important;
 }
 
 .ag-theme-alpine .ag-header-cell-resize {
   position: absolute;
-  right: 0;
+  right: -4px;
   cursor: col-resize;
   width: 8px;
-  height: 100%;
-  opacity: 0;
+  height: 50%;
+  top: 25%;
+  opacity: 1;
 }
 
 .ag-theme-alpine .ag-header-cell::after {
@@ -77,6 +80,29 @@
 
 .ag-theme-alpine .ag-header-cell:hover .ag-header-cell-resize {
   opacity: 1;
+}
+
+.ag-theme-alpine .ag-header-cell:hover {
+  background-color: #f8f9fa;
+}
+
+.ag-theme-alpine .ag-header-cell .ag-header-cell-resize::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 1px;
+  height: 100%;
+  background-color: #d1d5db;
+}
+
+.ag-theme-alpine .ag-header-cell .ag-header-cell-resize:hover::after {
+  background-color: #9ca3af;
+}
+
+/* Убираем ресайзер из первой колонки */
+.ag-theme-alpine .ag-header-cell.ag-header-cell-first .ag-header-cell-resize {
+  display: none;
 }
 
 /* Кастомные классы для хедера */
