@@ -137,9 +137,9 @@
 .ag-theme-alpine .ag-cell {
   padding: 8px 12px;
   line-height: 40px;
-  display: flex;
-  align-items: center;
-  border-right: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ag-theme-alpine .ag-row {
@@ -331,4 +331,22 @@
 
 .ag-row-animation {
   transition: background-color 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.ag-theme-alpine .ag-cell::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 3px;
+  background: #666;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.ag-theme-alpine .ag-cell.text-truncated::after {
+  opacity: 1;
 }

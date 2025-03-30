@@ -266,12 +266,8 @@ const OperatorTable: React.FC = () => {
           rowSelection="multiple"
           enableRangeSelection={true}
           animateRows={true}
-          rowDragManaged={true}
-          suppressMoveWhenRowDragging={false}
           enableCellTextSelection={true}
           ensureDomOrder={true}
-          domLayout="normal"
-          suppressHorizontalScroll={false}
         />
       </div>
     </div>
