@@ -2,14 +2,14 @@
   {
     "tenantGuid": "988636-0-abc-def",
     "operatorName": "Wingtip",
+    "id": "988636-0-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Wingtip User0",
       "email": "user0@wingtip.com",
       "phone": "+1-202-555-1000"
     },
-    "companyName": "AdventureWorks Ltd",
-    "companySize": "3000+ people",
+    "companySize": "3000+",
     "markets": [
       "AU",
       "SG",
@@ -21,14 +21,14 @@
   {
     "tenantGuid": "481781-1-abc-def",
     "operatorName": "Contoso",
+    "id": "481781-1-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Contoso User1",
       "email": "user1@contoso.com",
       "phone": "+1-202-555-1001"
     },
-    "companyName": "Contoso Corp",
-    "companySize": "500+ people",
+    "companySize": "500+",
     "markets": [
       "BR",
       "AR"
@@ -39,14 +39,14 @@
   {
     "tenantGuid": "451069-2-abc-def",
     "operatorName": "Contoso",
+    "id": "451069-2-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Contoso User2",
       "email": "user2@contoso.com",
       "phone": "+1-202-555-1002"
     },
-    "companyName": "Wingtip Toys",
-    "companySize": "1-10 people",
+    "companySize": "1-10",
     "markets": [
       "BR",
       "AR"
@@ -57,14 +57,14 @@
   {
     "tenantGuid": "334842-3-abc-def",
     "operatorName": "Wingtip",
+    "id": "334842-3-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Wingtip User3",
       "email": "user3@wingtip.com",
       "phone": "+1-202-555-1003"
     },
-    "companyName": "Fabrikam Inc",
-    "companySize": "500+ people",
+    "companySize": "500+",
     "markets": [
       "IN",
       "GB",
@@ -77,14 +77,14 @@
   {
     "tenantGuid": "717680-4-abc-def",
     "operatorName": "Fabrikam",
+    "id": "717680-4-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Fabrikam User4",
       "email": "user4@fabrikam.com",
       "phone": "+1-202-555-1004"
     },
-    "companyName": "Northwind Traders",
-    "companySize": "3000+ people",
+    "companySize": "3000+",
     "markets": [
       "AU",
       "SG",
@@ -96,14 +96,14 @@
   {
     "tenantGuid": "729707-5-abc-def",
     "operatorName": "Fabrikam",
+    "id": "729707-5-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Fabrikam User5",
       "email": "user5@fabrikam.com",
       "phone": "+1-202-555-1005"
     },
-    "companyName": "Northwind Traders",
-    "companySize": "11-50 people",
+    "companySize": "11-50",
     "markets": [
       "US",
       "CA"
@@ -114,14 +114,14 @@
   {
     "tenantGuid": "215557-6-abc-def",
     "operatorName": "Northwind",
+    "id": "215557-6-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Northwind User6",
       "email": "user6@northwind.com",
       "phone": "+1-202-555-1006"
     },
-    "companyName": "Northwind Traders",
-    "companySize": "3000+ people",
+    "companySize": "3000+",
     "markets": [
       "BR",
       "AR"
@@ -132,14 +132,14 @@
   {
     "tenantGuid": "242840-7-abc-def",
     "operatorName": "Contoso",
+    "id": "242840-7-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Contoso User7",
       "email": "user7@contoso.com",
       "phone": "+1-202-555-1007"
     },
-    "companyName": "Northwind Traders",
-    "companySize": "500+ people",
+    "companySize": "500+",
     "markets": [
       "US",
       "CA"
@@ -150,14 +150,14 @@
   {
     "tenantGuid": "356510-8-abc-def",
     "operatorName": "Fabrikam",
+    "id": "356510-8-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Fabrikam User8",
       "email": "user8@fabrikam.com",
       "phone": "+1-202-555-1008"
     },
-    "companyName": "Northwind Traders",
-    "companySize": "201-500 people",
+    "companySize": "201-500",
     "markets": [
       "BR",
       "AR"
@@ -168,14 +168,14 @@
   {
     "tenantGuid": "131030-9-abc-def",
     "operatorName": "Northwind",
+    "id": "131030-9-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Northwind User9",
       "email": "user9@northwind.com",
       "phone": "+1-202-555-1009"
     },
-    "companyName": "Fabrikam Inc",
-    "companySize": "201-500 people",
+    "companySize": "201-500",
     "markets": [
       "BR",
       "AR"
@@ -186,14 +186,14 @@
   {
     "tenantGuid": "741213-10-abc-def",
     "operatorName": "AdventureWorks",
+    "id": "741213-10-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "AdventureWorks User10",
       "email": "user10@adventureworks.com",
       "phone": "+1-202-555-1010"
     },
-    "companyName": "Wingtip Toys",
-    "companySize": "51-200 people",
+    "companySize": "51-200",
     "markets": [
       "US",
       "CA"
@@ -204,14 +204,14 @@
   {
     "tenantGuid": "538344-11-abc-def",
     "operatorName": "Wingtip",
+    "id": "538344-11-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Wingtip User11",
       "email": "user11@wingtip.com",
       "phone": "+1-202-555-1011"
     },
-    "companyName": "Wingtip Toys",
-    "companySize": "1-10 people",
+    "companySize": "1-10",
     "markets": [
       "AU",
       "SG",
@@ -223,14 +223,14 @@
   {
     "tenantGuid": "496541-12-abc-def",
     "operatorName": "Contoso",
+    "id": "496541-12-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Contoso User12",
       "email": "user12@contoso.com",
       "phone": "+1-202-555-1012"
     },
-    "companyName": "Fabrikam Inc",
-    "companySize": "500+ people",
+    "companySize": "500+",
     "markets": [
       "US",
       "CA"
@@ -241,14 +241,14 @@
   {
     "tenantGuid": "938669-13-abc-def",
     "operatorName": "Wingtip",
+    "id": "938669-13-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Wingtip User13",
       "email": "user13@wingtip.com",
       "phone": "+1-202-555-1013"
     },
-    "companyName": "Fabrikam Inc",
-    "companySize": "1-10 people",
+    "companySize": "1-10",
     "markets": [
       "US",
       "CA"
@@ -259,14 +259,14 @@
   {
     "tenantGuid": "116448-14-abc-def",
     "operatorName": "Fabrikam",
+    "id": "116448-14-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Fabrikam User14",
       "email": "user14@fabrikam.com",
       "phone": "+1-202-555-1014"
     },
-    "companyName": "Fabrikam Inc",
-    "companySize": "500+ people",
+    "companySize": "500+",
     "markets": [
       "BR",
       "AR"
@@ -277,14 +277,14 @@
   {
     "tenantGuid": "409006-15-abc-def",
     "operatorName": "Wingtip",
+    "id": "409006-15-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Wingtip User15",
       "email": "user15@wingtip.com",
       "phone": "+1-202-555-1015"
     },
-    "companyName": "Wingtip Toys",
-    "companySize": "11-50 people",
+    "companySize": "11-50",
     "markets": [
       "DE",
       "JP"
@@ -295,14 +295,14 @@
   {
     "tenantGuid": "366178-16-abc-def",
     "operatorName": "Wingtip",
+    "id": "366178-16-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Wingtip User16",
       "email": "user16@wingtip.com",
       "phone": "+1-202-555-1016"
     },
-    "companyName": "Wingtip Toys",
-    "companySize": "201-500 people",
+    "companySize": "201-500",
     "markets": [
       "US",
       "CA"
@@ -313,14 +313,14 @@
   {
     "tenantGuid": "191562-17-abc-def",
     "operatorName": "AdventureWorks",
+    "id": "191562-17-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "AdventureWorks User17",
       "email": "user17@adventureworks.com",
       "phone": "+1-202-555-1017"
     },
-    "companyName": "Fabrikam Inc",
-    "companySize": "500+ people",
+    "companySize": "500+",
     "markets": [
       "DE",
       "JP"
@@ -331,14 +331,14 @@
   {
     "tenantGuid": "669243-18-abc-def",
     "operatorName": "Wingtip",
+    "id": "669243-18-abc-def",
     "productContext": "cms",
     "contactInformation": {
       "name": "Wingtip User18",
       "email": "user18@wingtip.com",
       "phone": "+1-202-555-1018"
     },
-    "companyName": "Northwind Traders",
-    "companySize": "201-500 people",
+    "companySize": "201-500",
     "markets": [
       "AU",
       "SG",
@@ -350,14 +350,14 @@
   {
     "tenantGuid": "295683-19-abc-def",
     "operatorName": "Northwind",
+    "id": "295683-19-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Northwind User19",
       "email": "user19@northwind.com",
       "phone": "+1-202-555-1019"
     },
-    "companyName": "Wingtip Toys",
-    "companySize": "3000+ people",
+    "companySize": "3000+",
     "markets": [
       "DE",
       "JP"
@@ -368,14 +368,14 @@
   {
     "tenantGuid": "636288-20-abc-def",
     "operatorName": "Fabrikam",
+    "id": "636288-20-abc-def",
     "productContext": "teams",
     "contactInformation": {
       "name": "Fabrikam User20",
       "email": "user20@fabrikam.com",
       "phone": "+1-202-555-1020"
     },
-    "companyName": "Wingtip Toys",
-    "companySize": "500+ people",
+    "companySize": "500+",
     "markets": [
       "DE",
       "JP"

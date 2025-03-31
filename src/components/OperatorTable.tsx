@@ -9,7 +9,7 @@ import Switcher from './Switcher';
 
 interface OperatorData {
   operatorName: string;
-  companyName: string;
+  id: string;
   companySize: string;
   markets: string[];
   contactName: string;
@@ -75,14 +75,14 @@ const OperatorTable: React.FC = () => {
     {
       headerName: 'Operator Name',
       field: 'operatorName',
-      filter: true,
-      sortable: true,
+      filter: 'agTextColumnFilter',
+      floatingFilter: true,
     },
     {
-      headerName: 'Company Name',
-      field: 'companyName',
-      filter: true,
-      sortable: true,
+      headerName: 'ID',
+      field: 'id',
+      filter: 'agTextColumnFilter',
+      floatingFilter: true,
     },
     {
       headerName: 'Company Size',
@@ -161,7 +161,7 @@ const OperatorTable: React.FC = () => {
       .then(jsonData => {
         const parsedData: OperatorData[] = jsonData.map((item: any) => ({
           operatorName: item.operatorName,
-          companyName: item.companyName,
+          id: item.id,
           companySize: item.companySize,
           markets: item.markets,
           contactName: item.contactInformation.name,
@@ -177,7 +177,7 @@ const OperatorTable: React.FC = () => {
         setRowData([
           {
             operatorName: "Operator A",
-            companyName: "Company A",
+            id: "Company A",
             companySize: "1-50",
             markets: ["US", "EU"],
             contactName: "John Doe",
