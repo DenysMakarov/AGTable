@@ -27,6 +27,13 @@ const OperatorTable: React.FC = () => {
   const [switcherRect, setSwitcherRect] = useState({ left: 0, width: 0 });
   const switcherRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
+  const [columnDefs2, setColumnDefs] = useState([
+    // Set Filter is used by default in Enterprise version
+    { field: 'athlete', filter: true },
+    // explicitly configure column to use the Set Filter
+    { field: 'country', filter: 'agSetColumnFilter' },
+]);
+
   const statusOptions = [
     { value: 'All', label: 'All' },
     { value: 'Active', label: 'Active' },
@@ -82,14 +89,8 @@ const OperatorTable: React.FC = () => {
       field: 'companySize',
       filter: true,
       sortable: true,
-      headerComponentParams: {
-        template: 
-          `<div class="ag-cell-label-container" role="presentation">
-             <div class="ag-header-cell-label" role="presentation">
-               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><path d="M21 6H3"/><path d="M7 12H3"/><path d="M3 18h4"/><path d="M21 18h-4"/><path d="M11 12h4"/><path d="M21 12h-2"/></svg>
-               <span ref="eText" class="ag-header-cell-text">Company Size</span>
-             </div>
-           </div>`
+      icons: {
+        menu: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><path d="M21 6H3"/><path d="M7 12H3"/><path d="M3 18h4"/><path d="M21 18h-4"/><path d="M11 12h4"/><path d="M21 12h-2"/></svg>'
       }
     },
     {
@@ -98,20 +99,17 @@ const OperatorTable: React.FC = () => {
       filter: true,
       sortable: true,
       cellClass: (params) => ['status-cell', `status-${params.value.toLowerCase().replace(/\s+/g, '-')}`],
+      icons: {
+        menu: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><path d="m9 10 2 2 4-4"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>'
+      }
     },
     {
       headerName: 'Markets',
       field: 'markets',
       filter: true,
       sortable: true,
-      headerComponentParams: {
-        template: 
-          `<div class="ag-cell-label-container" role="presentation">
-             <div class="ag-header-cell-label" role="presentation">
-               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-               <span ref="eText" class="ag-header-cell-text">Markets</span>
-             </div>
-           </div>`
+      icons: {
+        menu: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>'
       }
     },
     {
@@ -119,14 +117,8 @@ const OperatorTable: React.FC = () => {
       field: 'contactEmail',
       filter: true,
       sortable: true,
-      headerComponentParams: {
-        template: 
-          `<div class="ag-cell-label-container" role="presentation">
-             <div class="ag-header-cell-label" role="presentation">
-               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg>
-               <span ref="eText" class="ag-header-cell-text">Email</span>
-             </div>
-           </div>`
+      icons: {
+        menu: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path></svg>'
       }
     },
     {
@@ -134,14 +126,8 @@ const OperatorTable: React.FC = () => {
       field: 'contactPhone',
       filter: true,
       sortable: true,
-      headerComponentParams: {
-        template: 
-          `<div class="ag-cell-label-container" role="presentation">
-             <div class="ag-header-cell-label" role="presentation">
-               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-               <span ref="eText" class="ag-header-cell-text">Phone</span>
-             </div>
-           </div>`
+      icons: {
+        menu: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
       }
     },
     {
@@ -149,14 +135,8 @@ const OperatorTable: React.FC = () => {
       field: 'lastUpdated',
       filter: true,
       sortable: true,
-      headerComponentParams: {
-        template: 
-          `<div class="ag-cell-label-container" role="presentation">
-             <div class="ag-header-cell-label" role="presentation">
-               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-               <span ref="eText" class="ag-header-cell-text">Last Updated</span>
-             </div>
-           </div>`
+      icons: {
+        menu: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
       }
     },
   ], []);
@@ -213,18 +193,7 @@ const OperatorTable: React.FC = () => {
   const onFilterTextBoxChanged = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuickFilterText(value);
-    if (gridApi) {
-      gridApi.setFilterModel({
-        operatorName: { type: 'contains', filter: value },
-        companyName: { type: 'contains', filter: value },
-        companySize: { type: 'contains', filter: value },
-        markets: { type: 'contains', filter: value },
-        contactEmail: { type: 'contains', filter: value },
-        contactPhone: { type: 'contains', filter: value }
-      });
-      gridApi.onFilterChanged();
-    }
-  }, [gridApi]);
+  }, []);
 
   const onStatusFilterChange = useCallback((status: string) => {
     setStatusFilter(status);
@@ -247,7 +216,7 @@ const OperatorTable: React.FC = () => {
       <div className="filters-panel">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Быстрый поиск..."
           onChange={onFilterTextBoxChanged}
           className="search-input"
           value={quickFilterText}
@@ -264,8 +233,10 @@ const OperatorTable: React.FC = () => {
           rowData={rowData}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
-          suppressRowClickSelection={true}
-          rowSelection="multiple"
+          gridOptions={{
+            rowSelection: 'multiple'
+          }}
+          quickFilterText={quickFilterText}
           animateRows={true}
           enableCellTextSelection={true}
           ensureDomOrder={true}

@@ -57,6 +57,7 @@
   display: flex;
   align-items: center;
   border-right: none !important;
+  border-bottom: 1px solid var(--ag-border-color) !important;
 }
 
 .ag-theme-alpine .ag-header-cell-resize {
@@ -84,6 +85,7 @@
 
 .ag-theme-alpine .ag-header-cell:hover {
   background-color: #f8f9fa;
+  border-bottom: 1px solid var(--ag-border-color) !important;
 }
 
 .ag-theme-alpine .ag-header-cell .ag-header-cell-resize::after {
