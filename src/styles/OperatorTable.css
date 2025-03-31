@@ -385,3 +385,22 @@
   padding: 0;
   width: 50px;
 }
+
+.checkbox-header {
+  padding: 8px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #000;
+}
+
+.checkbox-header .ag-header-select-all {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  background: #000;
+  margin-right: 0 !important;
+}
+
+

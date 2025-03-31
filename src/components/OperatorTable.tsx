@@ -52,17 +52,18 @@ const OperatorTable: React.FC = () => {
 
   const columnDefs = useMemo<ColDef[]>(() => [
     {
-      width: 50,
-      minWidth: 50,
-      maxWidth: 50,
+      width: 48,
+      minWidth: 48,
+      maxWidth: 48,
       flex: 0,
       headerCheckboxSelection: true,
       checkboxSelection: true,
-      pinned: 'left',
-    //   headerName: 'All',
+      pinned: 'left' as const,
       suppressMenu: true,
       sortable: false,
       filter: false,
+      resizable: false,
+      headerClass: 'checkbox-header',
     },
     {
       headerName: 'Operator Name',
@@ -274,4 +275,5 @@ const OperatorTable: React.FC = () => {
   );
 };
 
-export default OperatorTable; 
+export default OperatorTable;
+
