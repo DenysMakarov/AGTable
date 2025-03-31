@@ -30,6 +30,7 @@
   border: none;
   border-radius: 8px;
   overflow: hidden;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .ag-theme-alpine .ag-header {
@@ -453,7 +454,8 @@
   align-items: center;
   padding: 0px !important;
   margin-bottom: 0 !important;
-  padding: 0 5px  !important;
+  padding: 1px 5px  !important;
+  margin-bottom: 1px !important;
 }
 
 .switcher button {
@@ -474,9 +476,18 @@
   padding: 8px;
 }
 
-.search-container {
+.id-cell {
   display: flex;
   align-items: center;
-  justify-content: start;
-  height: 32px;
+  gap: 8px;
+}
+
+.id-cell .copy-icon {
+  cursor: pointer;
+  color: #6B7280;
+  transition: color 0.2s ease-in-out;
+}
+
+.id-cell .copy-icon:hover {
+  color: #111827;
 }

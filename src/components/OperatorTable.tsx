@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { ListFilter, AtSign, Phone, Globe, Ruler, Clock, Search } from 'lucide-react';
+import { ListFilter, AtSign, Phone, Globe, Ruler, Clock, Search, Copy, ClipboardCopy, Files } from 'lucide-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { ColDef, GridReadyEvent, GridApi } from 'ag-grid-community';
@@ -18,6 +18,19 @@ interface OperatorData {
   consentStatus: string;
   lastUpdated: string;
 }
+
+const IdCellRenderer = (props: any) => {
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(props.value);
+  };
+
+  return (
+    <div className="id-cell">
+      <Files size={16} className="copy-icon" onClick={copyToClipboard} />
+      <span>{props.value}</span>
+    </div>
+  );
+};
 
 const OperatorTable: React.FC = () => {
   const [gridApi, setGridApi] = useState<GridApi | null>(null);
@@ -83,6 +96,7 @@ const OperatorTable: React.FC = () => {
       field: 'id',
       filter: 'agTextColumnFilter',
       floatingFilter: true,
+      cellRenderer: IdCellRenderer,
     },
     {
       headerName: 'Company Size',
