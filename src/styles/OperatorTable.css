@@ -491,3 +491,27 @@
 .id-cell .copy-icon:hover {
   color: #111827;
 }
+
+/* Стили для скроллбаров */
+.ag-theme-alpine ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.ag-theme-alpine ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.ag-theme-alpine ::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.ag-theme-alpine ::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.ag-theme-alpine ::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
