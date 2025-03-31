@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { ListFilter, AtSign, Phone, Globe, Ruler, Clock } from 'lucide-react';
+import { ListFilter, AtSign, Phone, Globe, Ruler, Clock, Search } from 'lucide-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { ColDef, GridReadyEvent, GridApi } from 'ag-grid-community';
@@ -213,20 +213,29 @@ const OperatorTable: React.FC = () => {
 
   return (
     <div style={{ width: '100%', height: '100%' }}>
-      <div className="filters-panel">
-        <input
-          type="text"
-          placeholder="Быстрый поиск..."
-          onChange={onFilterTextBoxChanged}
-          className="search-input"
-          value={quickFilterText}
+      <div className='quick-filter-container'>
+        <div className="filters-panel">
+          <div className='search-container'>
+            <div className='icon-container'>
+              <Search size={16} />
+            </div>
+            <input
+              type="text"
+              placeholder="Quick Filter..."
+              onChange={onFilterTextBoxChanged}
+              className="search-input"
+              value={quickFilterText}
+            />
+          </div>
+
+        </div>
+        <Switcher 
+          options={statusOptions}
+          value={statusFilter}
+          onChange={onStatusFilterChange}
         />
       </div>
-      <Switcher 
-        options={statusOptions}
-        value={statusFilter}
-        onChange={onStatusFilterChange}
-      />
+
       <div className="ag-theme-alpine" style={{ height: 'calc(100vh - 160px)', width: '100%' }}>
         <AgGridReact
           onGridReady={onGridReady}
