@@ -1,6 +1,6 @@
-import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { ListFilter, AtSign, Phone, Globe, Ruler, Clock, Search, Copy, ClipboardCopy, Files } from 'lucide-react';
+import { Search, ClipboardCopy } from 'lucide-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { ColDef, GridReadyEvent, GridApi } from 'ag-grid-community';
@@ -26,7 +26,7 @@ const IdCellRenderer = (props: any) => {
 
   return (
     <div className="id-cell">
-      <Files size={16} className="copy-icon" onClick={copyToClipboard} />
+      <ClipboardCopy size={16} className="copy-icon" onClick={copyToClipboard} />
       <span>{props.value}</span>
     </div>
   );
@@ -37,15 +37,6 @@ const OperatorTable: React.FC = () => {
   const [rowData, setRowData] = useState<OperatorData[]>([]);
   const [quickFilterText, setQuickFilterText] = useState('');
   const [statusFilter, setStatusFilter] = useState('All');
-  const [switcherRect, setSwitcherRect] = useState({ left: 0, width: 0 });
-  const switcherRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
-  const [columnDefs2, setColumnDefs] = useState([
-    // Set Filter is used by default in Enterprise version
-    { field: 'athlete', filter: true },
-    // explicitly configure column to use the Set Filter
-    { field: 'country', filter: 'agSetColumnFilter' },
-]);
 
   const statusOptions = [
     { value: 'All', label: 'All' },
@@ -55,20 +46,60 @@ const OperatorTable: React.FC = () => {
   ];
 
   useEffect(() => {
-    const activeButton = switcherRefs.current.find(
-      (ref) => ref?.classList.contains('active')
-    );
-    if (activeButton) {
-      setSwitcherRect({
-        left: activeButton.offsetLeft,
-        width: activeButton.offsetWidth,
+    fetch('/operator-consent-table.json')
+      .then(response => response.json())
+      .then(jsonData => {
+        const parsedData: OperatorData[] = jsonData.map((item: any) => ({
+          operatorName: item.operatorName,
+          id: item.id,
+          companySize: item.companySize,
+          markets: item.markets,
+          contactName: item.contactInformation.name,
+          contactEmail: item.contactInformation.email,
+          contactPhone: item.contactInformation.phone,
+          consentStatus: item.latestConsentStatus,
+          lastUpdated: item.lastConsentUpdate
+        }));
+        setRowData(parsedData);
+      })
+      .catch(error => {
+        console.error('Error loading JSON:', error);
+        setRowData([
+          {
+            operatorName: "Operator A",
+            id: "Company A",
+            companySize: "1-50",
+            markets: ["US", "EU"],
+            contactName: "John Doe",
+            contactEmail: "john@example.com",
+            contactPhone: "+1234567890",
+            consentStatus: "Active",
+            lastUpdated: "2024-03-20"
+          }
+        ]);
       });
-    }
-  }, [statusFilter]);
+  }, []);
 
-  const onGridReady = (params: GridReadyEvent) => {
-    setGridApi(params.api);
-  };
+  const onFilterTextBoxChanged = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setQuickFilterText(value);
+  }, []);
+
+  const onStatusFilterChange = useCallback((status: string) => {
+    setStatusFilter(status);
+    if (gridApi) {
+      if (status === 'All') {
+        gridApi.setFilterModel(null);
+      } else {
+        gridApi.setFilterModel({
+          consentStatus: {
+            type: 'equals',
+            filter: status
+          }
+        });
+      }
+    }
+  }, [gridApi]);
 
   const columnDefs = useMemo<ColDef[]>(() => [
     {
@@ -169,61 +200,9 @@ const OperatorTable: React.FC = () => {
     }
   }), []);
 
-  useEffect(() => {
-    fetch('/operator-consent-table.json')
-      .then(response => response.json())
-      .then(jsonData => {
-        const parsedData: OperatorData[] = jsonData.map((item: any) => ({
-          operatorName: item.operatorName,
-          id: item.id,
-          companySize: item.companySize,
-          markets: item.markets,
-          contactName: item.contactInformation.name,
-          contactEmail: item.contactInformation.email,
-          contactPhone: item.contactInformation.phone,
-          consentStatus: item.latestConsentStatus,
-          lastUpdated: item.lastConsentUpdate
-        }));
-        setRowData(parsedData);
-      })
-      .catch(error => {
-        console.error('Error loading JSON:', error);
-        setRowData([
-          {
-            operatorName: "Operator A",
-            id: "Company A",
-            companySize: "1-50",
-            markets: ["US", "EU"],
-            contactName: "John Doe",
-            contactEmail: "john@example.com",
-            contactPhone: "+1234567890",
-            consentStatus: "Active",
-            lastUpdated: "2024-03-20"
-          }
-        ]);
-      });
-  }, []);
-
-  const onFilterTextBoxChanged = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setQuickFilterText(value);
-  }, []);
-
-  const onStatusFilterChange = useCallback((status: string) => {
-    setStatusFilter(status);
-    if (gridApi) {
-      if (status === 'All') {
-        gridApi.setFilterModel(null);
-      } else {
-        gridApi.setFilterModel({
-          consentStatus: {
-            type: 'equals',
-            filter: status
-          }
-        });
-      }
-    }
-  }, [gridApi]);
+  const onGridReady = (params: GridReadyEvent) => {
+    setGridApi(params.api);
+  };
 
   return (
     <div style={{ width: '100%', height: '100%' }}>
